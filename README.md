@@ -1,5 +1,14 @@
 # PHP_Laravel12_SEO
 
+<p align="center">
+  <img src="https://img.shields.io/badge/Laravel-12.x-red" alt="Laravel Version">
+  <img src="https://img.shields.io/badge/PHP-8.2+-blue" alt="PHP Version">
+  <img src="https://img.shields.io/badge/SEO-Optimized-brightgreen" alt="SEO Ready">
+  <img src="https://img.shields.io/badge/Package-archtechx%2Flaravel--seo-orange" alt="SEO Package">
+  <img src="https://img.shields.io/badge/License-MIT-lightgrey" alt="License">
+</p>
+
+
 ## Overview
 
 This project demonstrates how to build an SEO-optimized product catalog using Laravel and the archtechx/laravel-seo package. It includes dynamic meta tags, OpenGraph data, Twitter Cards, canonical URLs, and structured data for individual product pages to improve search engine visibility and social media sharing.
