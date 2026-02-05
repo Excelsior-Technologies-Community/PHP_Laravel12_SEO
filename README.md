@@ -630,9 +630,9 @@ Visit:
 
 Your Laravel app now includes:
 
-✔ Dynamic Product Pages
-✔ SEO Title & Description
-✔ OpenGraph Tags
-✔ Twitter Cards
-✔ Canonical URLs
-✔ Product Structured Data (Rich Results Ready)
+*  Dynamic Product Pages
+*  SEO Title & Description
+*  OpenGraph Tags
+*  Twitter Cards
+*  Canonical URLs
+*  Product Structured Data (Rich Results Ready)
