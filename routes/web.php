@@ -3,24 +3,96 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 
-// Homepage with basic SEO meta tags
+
+/*
+|--------------------------------------------------------------------------
+| Homepage
+|--------------------------------------------------------------------------
+*/
+
 Route::get('/', function () {
-    seo()->title('Welcome to My Store');
-    seo()->description('Shop the latest products at amazing prices.');
+
+    seo()
+        ->title('Welcome to My Store')
+        ->description(
+            'Shop the latest products at amazing prices.'
+        );
+
     return view('welcome');
-});
 
-// Display list of all products
-Route::get('/product', [ProductController::class, 'index'])->name('product.index');
+})->name('home');
 
-// Show form to create a new product
-Route::get('/product/create', [ProductController::class, 'create'])->name('product.create');
 
-// Store a newly created product in database
-Route::post('/product', [ProductController::class, 'store'])->name('product.store');
+/*
+|--------------------------------------------------------------------------
+| SEO Routes
+|--------------------------------------------------------------------------
+*/
 
-// Show single product details using slug
-Route::get('/product/{product}', [ProductController::class, 'show'])->name('product.show');
+/*
+ * Dynamic XML Sitemap
+ */
+Route::get('/sitemap.xml', [
+    ProductController::class,
+    'sitemap'
+])->name('seo.sitemap');
 
-// Delete a product from database
-Route::delete('/product/{product}', [ProductController::class, 'destroy'])->name('product.destroy');
+
+/*
+ * Dynamic Robots.txt
+ */
+Route::get('/robots.txt', [
+    ProductController::class,
+    'robots'
+])->name('seo.robots');
+
+
+/*
+|--------------------------------------------------------------------------
+| Product Routes
+|--------------------------------------------------------------------------
+*/
+
+/*
+ * Display all products
+ */
+Route::get('/product', [
+    ProductController::class,
+    'index'
+])->name('product.index');
+
+
+/*
+ * Show create product form
+ */
+Route::get('/product/create', [
+    ProductController::class,
+    'create'
+])->name('product.create');
+
+
+/*
+ * Store product
+ */
+Route::post('/product', [
+    ProductController::class,
+    'store'
+])->name('product.store');
+
+
+/*
+ * Show product using SEO-friendly slug
+ */
+Route::get('/product/{product}', [
+    ProductController::class,
+    'show'
+])->name('product.show');
+
+
+/*
+ * Delete product
+ */
+Route::delete('/product/{product}', [
+    ProductController::class,
+    'destroy'
+])->name('product.destroy');
